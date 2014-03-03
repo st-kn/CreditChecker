@@ -242,7 +242,8 @@ function analyzeData(csv){
 			expertBaseCnt += 1 * credits[index]["creditNumber"];
 		}
 		else if(
-		   (credits[index]["creditCategory"] == "" && credits[index]["classCode"].match(/^1[123][0-9]{5}$/))
+		   (credits[index]["creditCategory"] == "" && credits[index]["classCode"].match(/^1[123][0-9]{5}$/)) ||
+		   (credits[index]["creditCategory"] == "" && hennyu && credits[index]["className"] == "総合科目I")
 		   ){
 		   	if(sougou1Cnt < 2){
 				credits[index]["creditCategory"] = "総合科目I（基礎科目共通必修）";
